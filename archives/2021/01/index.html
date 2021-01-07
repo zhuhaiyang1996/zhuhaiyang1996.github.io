@@ -1,15 +1,31 @@
-extends widget/base
+<!DOCTYPE html><html class="appearance-dark" lang="en"><head><meta charset="UTF-8"><title>zhuhaiyang's blog</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><link rel="icon"><link rel="stylesheet" href="/style/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/helper.css"><script src="/js/main.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.3.0"></head><body class="is-flex is-flex-direction-column"><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-space-between is-hidden-mobile"><section class="is-hidden-mobile"><h2><a href="/">zhuhaiyang's blog</a></h2></section><h3 class="is-hidden-mobile"><span>Archive · 2021</span></h3><aside><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><link rel="stylesheet" href="/style/widget-post-list.css"><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-4"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Linux"><i class="tag post-item-tag">Linux</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/01/07/Redirection/">Redirection</a></h2><time class="has-text-grey" datetime="2021-01-07T12:24:29.000Z">2021-01-07</time><p class="is-flex-grow-2 mt-2">Redirection标准输入、输出和错误
+标准输入重定向(STDIN，文件描述符为 0)：默认从键盘输入。
+标准输出重定向(STDOUT，文件描述符为 1)：默认输出到屏幕。
+错误输出重定向(STDERR，文件描述符为 2)：默认输出到屏幕。
 
-block topic
-    span= `Archive · ${ page.year || 'all' }`
-
-block content
-    include widget/post-list
-        block sidebar
-            div(style="position: sticky; top: 50px;")
-                include widget/archives.pug
-block script
-    script(src='/js/addActiveLinkStyle.js')
+标准输出重定向输出重定向中用到的符号及其作用
 
 
 
+
+符号
+作用
+
+
+
+命令 &amp;gt; 文件
+将标准输出重定向到一个文件中(清空原有文件的数据)
+
+
+命令 &amp;gt;&amp;gt; 文件
+将标准输出重定向到一个文件中（追加到原有内容的后面
+
+
+I/O 重定向允许我们来重定义标准输出的地点。我们使用 “&amp;gt;” 重定向符后接文件名将标准输出重定向到除屏幕以外的另一个文件。
+把 ls 命令的运行结果输送到文件 ls-output.txt 中去:
+1$ ls -lhS /us..</p><a class="tag read-more-btn is-medium mt-2" href="/2021/01/07/Redirection/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/01/07/hello-world/">Hello World</a></h2><time class="has-text-grey" datetime="2021-01-07T12:00:16.338Z">2021-01-07</time><p class="is-flex-grow-2 mt-2">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &amp;quot;My New Post&amp;quot;
+More info: Writing
+Run server1$ hexo server
+More info: Server
+Generate static files1$ hexo generate..</p><a class="tag read-more-btn is-medium mt-2" href="/2021/01/07/hello-world/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap"><span class="page-number current">1</span></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">2</span></li></ul></section></main></div></aside></div></article></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a target="_blank" rel="noopener nofollow" href="//github.com/haojen"><i class="iconfont icon-github"></i></a><!-- Ins--><a target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> zhuhaiyang 2021</span></p><div class="is-flex"><p>Powered by Hexo｜</p><p class="is-flex is-justify-content-center"><a target="_blank" rel="noopener" href="//github.com/haojen">Theme by &nbspHaojen&nbsp</a></p><div style="margin-top: 2px"><a class="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/addActiveLinkStyle.js"></script></body></html>

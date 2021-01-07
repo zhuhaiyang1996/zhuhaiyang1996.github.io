@@ -1,99 +1,72 @@
-extends widget/base
-block append link
-  link(rel='stylesheet', href= url_for('/style/post.css'))
-  link(rel='stylesheet', href= url_for('/style/highlight-theme-light.css'))
-  script(src= url_for("/jslib/highlight.pack.js"))
+<!DOCTYPE html><html class="appearance-dark" lang="en"><head><meta charset="UTF-8"><title>Hello World</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><link rel="icon"><link rel="stylesheet" href="/style/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/helper.css"><script src="/js/main.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/highlight-theme-light.css"><script src="/jslib/highlight.pack.js"></script><meta name="generator" content="Hexo 5.3.0"></head><body class="is-flex is-flex-direction-column"><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-space-between is-hidden-mobile"><section class="is-hidden-mobile"><h2><a href="/">zhuhaiyang's blog</a></h2></section><h3 class="is-hidden-mobile"></h3><aside><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif">Hello World</h1><time class="has-text-grey" datetime="2021-01-07T12:00:16.338Z">2021-01-07</time><article class="mt-2 post-content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+</article><article class="mt-6 comment-container"><script src="https://utteranc.es/client.js" repo="Haojen/Claudia-theme-blog" issue-term="pathname" theme="github-light" async></script></article></div></div></main><!-- Next post, maybe most people don't need it.--><!--#paginator!= paginator()--></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a target="_blank" rel="noopener nofollow" href="//github.com/haojen"><i class="iconfont icon-github"></i></a><!-- Ins--><a target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> zhuhaiyang 2021</span></p><div class="is-flex"><p>Powered by Hexo｜</p><p class="is-flex is-justify-content-center"><a target="_blank" rel="noopener" href="//github.com/haojen">Theme by &nbspHaojen&nbsp</a></p><div style="margin-top: 2px"><a class="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>hljs.initHighlighting();
 
-block content
-    - var tocContent = toc(page.content, {list_number: false})
+var directory = document.querySelectorAll('.toc a')
+if (directory.length > 0) {
+    var contentTocList = []
+    var activeClassName = 'is-active'
 
-    main.container.is-max-widescreen.content.section.post-page.pt-4.px-4
-        .columns.is-flex-desktop.is-justify-content-center.is-flex-direction-row-reverse
-            .column.is-3.is-hidden-mobile(class= tocContent.length < 1 && 'is-hidden')!= tocContent
-            .column.is-9
-                header.my-4
-                    if page.tags && page.tags.length > 0
-                        each tag in page.tags.toArray()
-                            a(href= url_for(`/tags/${tag.name}`))
-                                i.tag.post-item-tag= tag.name
-                h1.mt-0.mb-1.is-family-serif= page.title
-                if page.date
-                    time.has-text-grey(datetime=page.date.toJSON())= date(page.date, date_format)
-                article.mt-2.post-content!= page.content
-                if theme.comment_utteranc && theme.comment_utteranc.enable
-                    article.mt-6.comment-container
-                        script(
-                            src="https://utteranc.es/client.js"
-                            repo= theme.comment_utteranc.repo
-                            issue-term= theme.comment_utteranc.issue_term || "pathname"
-                            theme= theme.comment_utteranc.theme || "github-light"
-                            label= theme.comment_utteranc.label
-                            async
-                        )
-    // Next post, maybe most people don't need it.
-    //#paginator!= paginator()
-block script
-  script.
-      hljs.initHighlighting();
+    directory.forEach(function (link) {
+        if (!link.href) return
+        var id = decodeURI(link.href).split('#')[1]
+        contentTocList.push(document.getElementById(id))
+    })
 
-      var directory = document.querySelectorAll('.toc a')
-      if (directory.length > 0) {
-          var contentTocList = []
-          var activeClassName = 'is-active'
+    var DELAY = 150
+    var needWait = false
+    window.addEventListener('scroll', function (evt) {
+        if (needWait) {
+            return
+        }
+        needWait = true
+        var tocContainer = document.querySelector('.toc')
+        setTimeout(function () {
+            var spacing = 60
+            var activeTopicEl = null
+            var scrollTop = window.pageYOffset
+            for (var i = 0; i < contentTocList.length; i++) {
+                var currentTopic = contentTocList[i]
 
-          directory.forEach(function (link) {
-              if (!link.href) return
-              var id = decodeURI(link.href).split('#')[1]
-              contentTocList.push(document.getElementById(id))
-          })
+                if (currentTopic.offsetTop > scrollTop + spacing / 2) {
+                    // jump to next loop
+                    continue
+                }
 
-          var DELAY = 150
-          var needWait = false
-          window.addEventListener('scroll', function (evt) {
-              if (needWait) {
-                  return
-              }
-              needWait = true
-              var tocContainer = document.querySelector('.toc')
-              setTimeout(function () {
-                  var spacing = 60
-                  var activeTopicEl = null
-                  var scrollTop = window.pageYOffset
-                  for (var i = 0; i < contentTocList.length; i++) {
-                      var currentTopic = contentTocList[i]
+                if (!activeTopicEl) {
+                    activeTopicEl = currentTopic
+                } else if (currentTopic.offsetTop + spacing >= activeTopicEl.offsetTop - spacing) {
+                    activeTopicEl = currentTopic
+                }
 
-                      if (currentTopic.offsetTop > scrollTop + spacing / 2) {
-                          // jump to next loop
-                          continue
-                      }
+                var beforeActiveEl = document.querySelector('.toc' + ' .' + activeClassName)
+                beforeActiveEl && beforeActiveEl.classList.remove(activeClassName)
 
-                      if (!activeTopicEl) {
-                          activeTopicEl = currentTopic
-                      } else if (currentTopic.offsetTop + spacing >= activeTopicEl.offsetTop - spacing) {
-                          activeTopicEl = currentTopic
-                      }
+                var selectTarget = '.toc a[href="#' + encodeURI(activeTopicEl.id) + '"]'
+                var direc = document.querySelector(selectTarget)
+                direc.classList.add(activeClassName)
 
-                      var beforeActiveEl = document.querySelector('.toc' + ' .' + activeClassName)
-                      beforeActiveEl && beforeActiveEl.classList.remove(activeClassName)
+                var tocContainerHeight = tocContainer.getBoundingClientRect().height
+                if (direc.offsetTop >= tocContainerHeight - spacing) {
+                    tocContainer.scrollTo({
+                        // top: direc.offsetTop - spacing,
+                        top: direc.offsetTop + 100 - tocContainerHeight,
+                    })
+                }
+                else {
+                    tocContainer.scrollTo({ top: 0 })
+                }
+            }
+            needWait = false
+        }, DELAY)
 
-                      var selectTarget = '.toc a[href="#' + encodeURI(activeTopicEl.id) + '"]'
-                      var direc = document.querySelector(selectTarget)
-                      direc.classList.add(activeClassName)
+    })
 
-                      var tocContainerHeight = tocContainer.getBoundingClientRect().height
-                      if (direc.offsetTop >= tocContainerHeight - spacing) {
-                          tocContainer.scrollTo({
-                              // top: direc.offsetTop - spacing,
-                              top: direc.offsetTop + 100 - tocContainerHeight,
-                          })
-                      }
-                      else {
-                          tocContainer.scrollTo({ top: 0 })
-                      }
-                  }
-                  needWait = false
-              }, DELAY)
-
-          })
-
-      }
+}</script></body></html>
