@@ -144,7 +144,7 @@
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="https://zhuhaiyang1996.github.io/images/background.jpg" style="background-image: url(https://static-argvchs.netlify.app/images/background.jpg)" >
+    <div id="home-background" ref="homeBackground" data-images="https://s2.loli.net/2023/08/18/7lE4moijY1N3hIg.jpg" style="background-image: url(https://s2.loli.net/2023/08/18/7lE4moijY1N3hIg.jpg)" >
     </div>
     <div id="home-info" @click="homeClick">
         <span class="loop"></span>
@@ -185,50 +185,167 @@
             <h1 id="Docker-安装部署"><a href="#Docker-安装部署" class="headerlink" title="Docker 安装部署"></a>Docker 安装部署</h1><h2 id="Centos-7-Docker-在线安装"><a href="#Centos-7-Docker-在线安装" class="headerlink" title="Centos 7 Docker 在线安装"></a>Centos 7 Docker 在线安装</h2><ul>
 <li>安装最新版本 Docker</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br><span class="line">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum makecache fast</span><br><span class="line">yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">yum install -y yum-utils
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum makecache fast
+yum -y install docker-ce
+</code></pre>
 <ul>
 <li>安装指定版本 Docker</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ yum list docker-ce --showduplicates | <span class="built_in">sort</span> -r</span><br><span class="line"><span class="comment"># docker-ce.x86_64       18.06.1.ce-3.el7              docker-ce-stable</span></span><br><span class="line"><span class="comment"># docker-ce.x86_64       18.06.1.ce-3.el7              @docker-ce-stable</span></span><br><span class="line"><span class="comment"># docker-ce.x86_64       18.06.0.ce-3.el7              docker-ce-stable</span></span><br><span class="line"><span class="comment"># docker-ce.x86_64       18.03.1.ce-1.el7.centos       docker-ce-stable</span></span><br><span class="line"><span class="comment"># docker-ce.x86_64       18.03.0.ce-1.el7.centos       docker-ce-stable</span></span><br><span class="line"><span class="comment"># docker-ce.x86_64       17.12.1.ce-1.el7.centos       docker-ce-stable</span></span><br><span class="line"><span class="comment"># 选择版本安装</span></span><br><span class="line">$ sudo yum install docker-ce-&lt;VERSION STRING&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择安装 docker-ce-18.06.1.ce</span></span><br><span class="line">$ sudo yum install docker-ce-18.06.1.ce</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">$ yum list docker-ce --showduplicates | sort -r
+# docker-ce.x86_64       18.06.1.ce-3.el7              docker-ce-stable
+# docker-ce.x86_64       18.06.1.ce-3.el7              @docker-ce-stable
+# docker-ce.x86_64       18.06.0.ce-3.el7              docker-ce-stable
+# docker-ce.x86_64       18.03.1.ce-1.el7.centos       docker-ce-stable
+# docker-ce.x86_64       18.03.0.ce-1.el7.centos       docker-ce-stable
+# docker-ce.x86_64       17.12.1.ce-1.el7.centos       docker-ce-stable
+# 选择版本安装
+$ sudo yum install docker-ce-&lt;VERSION STRING&gt;
 
+# 选择安装 docker-ce-18.06.1.ce
+$ sudo yum install docker-ce-18.06.1.ce
+</code></pre>
 <h2 id="CentOS-7-Docker-离线安装"><a href="#CentOS-7-Docker-离线安装" class="headerlink" title="CentOS 7 Docker 离线安装"></a>CentOS 7 Docker 离线安装</h2><ul>
 <li>下载 <a target="_blank" rel="noopener" href="https://download.docker.com/linux/static/stable/x86_64/">Docker</a> 离线包</li>
 <li>解压 Docker 软件压缩包</li>
 <li>把 Docker 文件里面的内容复制到 &#x2F;usr&#x2F;bin 目录下</li>
 <li>添加 docker.socket 文件</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /usr/lib/systemd/system/docker.socket</span></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Docker Socket <span class="keyword">for</span> the API</span><br><span class="line">PartOf=docker.service</span><br><span class="line"></span><br><span class="line">[Socket]</span><br><span class="line">ListenStream=/var/run/docker.sock</span><br><span class="line">SocketMode=0660</span><br><span class="line">SocketUser=root</span><br><span class="line">SocketGroup=docker</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=sockets.target</span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># vim /usr/lib/systemd/system/docker.socket
 
+[Unit]
+Description=Docker Socket for the API
+PartOf=docker.service
+
+[Socket]
+ListenStream=/var/run/docker.sock
+SocketMode=0660
+SocketUser=root
+SocketGroup=docker
+
+[Install]
+WantedBy=sockets.target
+</code></pre>
 <ul>
 <li>添加 docker.service 文件</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /usr/lib/systemd/system/docker.service</span></span><br><span class="line">[Unit]</span><br><span class="line">Description=Docker Application Container Engine</span><br><span class="line">Documentation=https://docs.docker.com</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=notify</span><br><span class="line"><span class="comment"># the default is not to use systemd for cgroups because the delegate issues still</span></span><br><span class="line"><span class="comment"># exists and systemd currently does not support the cgroup feature set required</span></span><br><span class="line"><span class="comment"># for containers run by docker</span></span><br><span class="line"><span class="comment">#ExecStart=/usr/bin/dockerd</span></span><br><span class="line"><span class="comment">#ExecStart=/usr/bin/docker daemon --tlsverify --tlscacert=/root/openssl/ca.pem --tlscert=/root/openssl/server-cert.pem --tlskey=/root/openssl/server-key.pem --registry-mirror=http://3cda3ca9.m.daocloud.io -H tcp://0.0.0.0:2376</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#ExecStart=/usr/bin/docker daemon --registry-mirror=http://3cda3ca9.m.daocloud.io -H fd:// -H tcp://0.0.0.0:2375</span></span><br><span class="line"><span class="comment">#ExecStart=/usr/bin/dockerd --registry-mirror=http://3cda3ca9.m.daocloud.io</span></span><br><span class="line">ExecStart=/usr/bin/dockerd --registry-mirror=http://3cda3ca9.m.daocloud.io -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375</span><br><span class="line"></span><br><span class="line">ExecReload=/bin/kill -s HUP <span class="variable">$MAINPID</span></span><br><span class="line"><span class="comment"># Having non-zero Limit*s causes performance problems due to accounting overhead</span></span><br><span class="line"><span class="comment"># in the kernel. We recommend using cgroups to do container-local accounting.</span></span><br><span class="line">LimitNOFILE=infinity</span><br><span class="line">LimitNPROC=infinity</span><br><span class="line">LimitCORE=infinity</span><br><span class="line"><span class="comment"># Uncomment TasksMax if your systemd version supports it.</span></span><br><span class="line"><span class="comment"># Only systemd 226 and above support this version.</span></span><br><span class="line"><span class="comment">#TasksMax=infinity</span></span><br><span class="line">TimeoutStartSec=0</span><br><span class="line"><span class="comment"># set delegate yes so that systemd does not reset the cgroups of docker containers</span></span><br><span class="line">Delegate=<span class="built_in">yes</span></span><br><span class="line"><span class="comment"># kill only the docker process, not all processes in the cgroup</span></span><br><span class="line">KillMode=process</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># vim /usr/lib/systemd/system/docker.service
+[Unit]
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+After=network.target
 
+[Service]
+Type=notify
+# the default is not to use systemd for cgroups because the delegate issues still
+# exists and systemd currently does not support the cgroup feature set required
+# for containers run by docker
+#ExecStart=/usr/bin/dockerd
+#ExecStart=/usr/bin/docker daemon --tlsverify --tlscacert=/root/openssl/ca.pem --tlscert=/root/openssl/server-cert.pem --tlskey=/root/openssl/server-key.pem --registry-mirror=http://3cda3ca9.m.daocloud.io -H tcp://0.0.0.0:2376
+
+#ExecStart=/usr/bin/docker daemon --registry-mirror=http://3cda3ca9.m.daocloud.io -H fd:// -H tcp://0.0.0.0:2375
+#ExecStart=/usr/bin/dockerd --registry-mirror=http://3cda3ca9.m.daocloud.io
+ExecStart=/usr/bin/dockerd --registry-mirror=http://3cda3ca9.m.daocloud.io -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
+
+ExecReload=/bin/kill -s HUP $MAINPID
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+# Uncomment TasksMax if your systemd version supports it.
+# Only systemd 226 and above support this version.
+#TasksMax=infinity
+TimeoutStartSec=0
+# set delegate yes so that systemd does not reset the cgroups of docker containers
+Delegate=yes
+# kill only the docker process, not all processes in the cgroup
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
 <ul>
 <li>添加 containerd.service 文件</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /usr/lib/systemd/system/containerd.service</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Copyright The containerd Authors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></span><br><span class="line"><span class="comment"># you may not use this file except in compliance with the License.</span></span><br><span class="line"><span class="comment"># You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Unless required by applicable law or agreed to in writing, software</span></span><br><span class="line"><span class="comment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></span><br><span class="line"><span class="comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span><br><span class="line"><span class="comment"># See the License for the specific language governing permissions and</span></span><br><span class="line"><span class="comment"># limitations under the License.</span></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=containerd container runtime</span><br><span class="line">Documentation=https://containerd.io</span><br><span class="line">After=network.target local-fs.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStartPre=-/sbin/modprobe overlay</span><br><span class="line">ExecStart=/usr/local/bin/containerd</span><br><span class="line"></span><br><span class="line">Type=notify</span><br><span class="line">Delegate=<span class="built_in">yes</span></span><br><span class="line">KillMode=process</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=5</span><br><span class="line"><span class="comment"># Having non-zero Limit*s causes performance problems due to accounting overhead</span></span><br><span class="line"><span class="comment"># in the kernel. We recommend using cgroups to do container-local accounting.</span></span><br><span class="line">LimitNPROC=infinity</span><br><span class="line">LimitCORE=infinity</span><br><span class="line">LimitNOFILE=infinity</span><br><span class="line"><span class="comment"># Comment TasksMax if your systemd version does not supports it.</span></span><br><span class="line"><span class="comment"># Only systemd 226 and above support this version.</span></span><br><span class="line">TasksMax=infinity</span><br><span class="line">OOMScoreAdjust=-999</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># vim /usr/lib/systemd/system/containerd.service
 
+# Copyright The containerd Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+[Unit]
+Description=containerd container runtime
+Documentation=https://containerd.io
+After=network.target local-fs.target
+
+[Service]
+ExecStartPre=-/sbin/modprobe overlay
+ExecStart=/usr/local/bin/containerd
+
+Type=notify
+Delegate=yes
+KillMode=process
+Restart=always
+RestartSec=5
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNPROC=infinity
+LimitCORE=infinity
+LimitNOFILE=infinity
+# Comment TasksMax if your systemd version does not supports it.
+# Only systemd 226 and above support this version.
+TasksMax=infinity
+OOMScoreAdjust=-999
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
 <ul>
 <li>启动和测试</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl start docker</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># docker pull hello-world</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># docker run hello-world</span></span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># systemctl start docker
 
+# docker pull hello-world
+
+# docker run hello-world
+</code></pre>
 <h2 id="修改-Docker-镜像源"><a href="#修改-Docker-镜像源" class="headerlink" title="修改 Docker 镜像源"></a>修改 Docker 镜像源</h2><ul>
 <li>镜像源参考</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">中国区官方镜像：https://registry.docker-cn.com</span><br><span class="line">清华源：https://docker.mirrors.ustc.edu.cn</span><br><span class="line">阿里源：https://cr.console.aliyun.com</span><br><span class="line">腾讯源：https://mirror.ccs.tencentyun.com</span><br><span class="line">网易源：http://hub-mirror.c.163.com</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bahs">中国区官方镜像：https://registry.docker-cn.com
+清华源：https://docker.mirrors.ustc.edu.cn
+阿里源：https://cr.console.aliyun.com
+腾讯源：https://mirror.ccs.tencentyun.com
+网易源：http://hub-mirror.c.163.com
+</code></pre>
 <ul>
 <li>修改 Docker 镜像源</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/docker/daemon.json</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># vim /etc/docker/daemon.json
 
+&#123;
+    &quot;registry-mirrors&quot;: [
+        &quot;https://docker.mirrors.ustc.edu.cn&quot;
+    ]
+&#125;
+</code></pre>
 <ul>
 <li>重启 Docker 服务</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl restart docker</span></span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># systemctl restart docker
+</code></pre>
 
             
         </div>
@@ -269,17 +386,17 @@
         <div class="content" v-pre>
             
             <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
             
